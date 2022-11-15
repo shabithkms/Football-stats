@@ -22,7 +22,11 @@ function App() {
         const token = process.env.REACT_APP_API_KEY
         axios
             .get(url, {
-                headers: { 'X-Auth-Token': token },
+                headers: {
+                    'X-Auth-Token': token,
+                    'Access-Control-Allow-Origin': '*',
+                },
+
                 mode: 'no-cors',
             })
             .then((res) => {
